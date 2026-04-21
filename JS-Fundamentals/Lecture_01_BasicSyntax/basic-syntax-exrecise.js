@@ -1,5 +1,5 @@
 // Task 1.
-function print(input) {
+function printAgeType(input) {
     let age;
 
     if (input >= 0 && input <= 2) {
