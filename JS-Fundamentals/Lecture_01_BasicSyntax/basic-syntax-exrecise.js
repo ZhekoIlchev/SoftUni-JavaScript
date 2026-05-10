@@ -89,10 +89,6 @@ function calculatePrice(group, type, day) {
             } else if (type === 'Regular') {
                 pricePerPerson = 22.50;
             }
-
-            if (group  >= 10 && group <= 20 ) {
-                discount = 0.05;
-            }
             break;
     }
 
@@ -121,6 +117,71 @@ function checkYear(year) {
     }
 }
 
-checkYear(1984);
-checkYear(2003);
-checkYear(4);
+// Task 6.
+function printSum(startNumber, endNumber) {
+    let sum = 0;
+    let allNumbers = '';
+    for(let i = startNumber; i <= endNumber; i++) {
+        sum += i;
+        allNumbers += `${i} `; 
+    }
+
+    console.log(allNumbers);
+    console.log(`Sum: ${sum}`);
+}
+
+// Task 7.
+function printTriangle(number) {
+    for (let row = 1; row <= number; row++) {
+        let rowSequence = '';
+
+        for (let column = 0; column < row; column++) {
+            rowSequence += `${row} `
+        }
+
+        console.log(rowSequence.trim())
+    }
+}
+
+// Task 8.
+function printMultiplicationTable(number) {
+    for (let i = 1; i <= 10; i++) {
+        let result = number * i;
+        console.log(`${number} X ${i} = ${result}`)
+    }
+}
+
+// Task 9.
+function login(input){
+    let username = input[0];
+    let correctPassword = '';
+    let tries = 0;
+
+    let textAsArray = username.split('');
+
+    for (let i = textAsArray.length - 1; i >=0; i--) {
+        correctPassword += textAsArray[i];
+    }
+
+    for (let i = 1; i < input.length; i++) {
+        let currentPassowrd = input[i];
+
+        if (correctPassword === currentPassowrd) {
+            console.log(`User ${username} logged in.`);
+            return;
+        } else {
+            tries += 1;
+            let message = tries === 4 ? `User ${username} blocked!` : `Incorrect password. Try again.`
+            console.log(message);
+
+            if (tries === 4) {
+                return;
+            }
+        }
+    }
+}
+
+
+
+login(['Acer', 'login', 'go', 'let me in', 'recA'])
+
