@@ -21,7 +21,7 @@ function printAgeType(input) {
 
 // Task 2.
 function roundNumber(number, precision) {
-    if (precision > 15) { 
+    if (precision > 15) {
         precision = 15;
     }
 
@@ -41,7 +41,7 @@ function findBiggestDevisor(number) {
         biggestDevisor = 3
     }
 
-    if (number % 6 === 0 ) {
+    if (number % 6 === 0) {
         biggestDevisor = 6;
     }
 
@@ -92,15 +92,15 @@ function calculatePrice(group, type, day) {
             break;
     }
 
-    if (group  >= 30 && type === 'Students') {
+    if (group >= 30 && type === 'Students') {
         discount = 0.15;
     }
 
     if (group > 100 && type === 'Business') {
         group -= 10;
     }
-    
-    if (group  >= 10 && group <= 20 && type === 'Regular') {
+
+    if (group >= 10 && group <= 20 && type === 'Regular') {
         discount = 0.05;
     }
 
@@ -121,9 +121,9 @@ function checkYear(year) {
 function printSum(startNumber, endNumber) {
     let sum = 0;
     let allNumbers = '';
-    for(let i = startNumber; i <= endNumber; i++) {
+    for (let i = startNumber; i <= endNumber; i++) {
         sum += i;
-        allNumbers += `${i} `; 
+        allNumbers += `${i} `;
     }
 
     console.log(allNumbers);
@@ -152,14 +152,14 @@ function printMultiplicationTable(number) {
 }
 
 // Task 9.
-function login(input){
+function login(input) {
     let username = input[0];
     let correctPassword = '';
     let tries = 0;
 
     let textAsArray = username.split('');
 
-    for (let i = textAsArray.length - 1; i >=0; i--) {
+    for (let i = textAsArray.length - 1; i >= 0; i--) {
         correctPassword += textAsArray[i];
     }
 
@@ -180,8 +180,3 @@ function login(input){
         }
     }
 }
-
-
-
-login(['Acer', 'login', 'go', 'let me in', 'recA'])
-
